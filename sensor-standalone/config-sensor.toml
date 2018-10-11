@@ -1,6 +1,6 @@
 [listener]
 type="raw"
-interfaces=["ens3"]
+interfaces=["lo"]
 
 [channel.console]
 type="console"

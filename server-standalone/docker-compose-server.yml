@@ -42,18 +42,6 @@ services:
             condition: service_healthy
     networks:
       - honeytrap
-  honeytrap:
-    # image: honeytrap:latest
-    image: honeytrap/honeytrap:latest
-    ports:
-      - "1339:1339"
-    volumes:
-      - ./config-server.toml:/config/config.toml
-    depends_on:
-        elasticsearch:
-            condition: service_healthy
-    networks:
-      - honeytrap
 networks:
   honeytrap:
     external: true

@@ -6,23 +6,18 @@ type="ssh-simulator"
 credentials=["root:root", "root:password"]
 
 [[port]]
-ports=["tcp/8022", "tcp/8023"]
+ports=["tcp/8022"]
 services=["ssh-simulator"]
-
-[service.telnet]
-type="telnet"
-image="/data/screenshot-20171030174349.png"
-server-name="WS-3244"
-
-[[port]]
-port="tcp/5900"
-services=["telnet"]
 
 [channel.console]
 type="console"
 
+[channel.elasticsearch]
+type="elasticsearch"
+url="http://127.0.0.1:9200/honeytrap"
+
 [[filter]]
-channel=["console"]
+channel=["console","elasticsearch"]
 
 [[logging]]
 output = "stdout"

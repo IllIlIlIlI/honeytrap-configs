@@ -1,8 +1,9 @@
 [listener]
 type="agent"
+listen=":1337"
 
 [[port]]
-port="tcp/22"
+port="tcp/8022"
 services=["ssh-simulator"]
 
 [service.ssh-simulator]
@@ -14,7 +15,7 @@ type="console"
 
 [channel.elasticsearch]
 type="elasticsearch"
-url="http://elasticsearch:9200/honeytrap"
+url="http://elasticsearch:9200/honeytrap-agent"
 
 [[filter]]
 channel=["console", "elasticsearch"]
